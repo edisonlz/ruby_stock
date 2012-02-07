@@ -1,0 +1,36 @@
+--- 
+:class_name: DayList
+:columns: 
+- :data_type: :integer
+  :class: Mongoose::IDColumn
+  :name: :id
+- :data_type: :string
+  :class: Mongoose::SkipListIndexColumn
+  :name: :code
+- :data_type: :float
+  :class: Mongoose::Column
+  :name: :open
+- :data_type: :float
+  :class: Mongoose::Column
+  :name: :high
+- :data_type: :float
+  :class: Mongoose::Column
+  :name: :low
+- :data_type: :float
+  :class: Mongoose::Column
+  :name: :close
+- :data_type: :float
+  :class: Mongoose::Column
+  :name: :volume
+- :data_type: :float
+  :class: Mongoose::Column
+  :name: :adjclose
+- :data_type: :float
+  :class: Mongoose::Column
+  :name: :recno
+- :data_type: :integer
+  :class: Mongoose::Column
+  :name: :date
+:table_name: :day_list
+:last_id_used: 4077
+:deleted_recs_counter: 0

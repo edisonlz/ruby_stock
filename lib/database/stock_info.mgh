@@ -1,0 +1,15 @@
+--- 
+:table_name: :stock_info
+:last_id_used: 0
+:deleted_recs_counter: 0
+:columns: 
+- :class: Mongoose::IDColumn
+  :name: :id
+  :data_type: :integer
+- :class: Mongoose::SkipListIndexColumn
+  :name: :code
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :name
+  :data_type: :string
+:class_name: StockInfo

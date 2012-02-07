@@ -1,0 +1,63 @@
+--- 
+:table_name: :stand_list
+:last_id_used: 0
+:deleted_recs_counter: 0
+:columns: 
+- :class: Mongoose::IDColumn
+  :name: :id
+  :data_type: :integer
+- :class: Mongoose::SkipListIndexColumn
+  :name: :symbol
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :name
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :lastTrade
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :date
+  :data_type: :date
+- :class: Mongoose::Column
+  :name: :time
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :change
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :changepoints
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :previousclose
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :open
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :dayhigh
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :daylow
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :volume
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :dayrange
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :lasttradewithtime
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :tickertrend
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :averagedailyvolume
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :bid
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :ask
+  :data_type: :float
+:class_name: StandList

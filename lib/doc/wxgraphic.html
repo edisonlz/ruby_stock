@@ -1,0 +1,437 @@
+<html>
+<head>
+<title> Wx::GraphicsContext</title>
+<link rel="stylesheet" type="text/css" href="wxruby.css" />
+</head>
+<body>
+<a href="index.html" id="homelink">wxRuby Documentation Home</a>
+<h1 id="wxgraphicscontext">Wx::GraphicsContext</h1>
+
+
+<p>GraphicsContext is a drawing context that can be used to do high-quality
+anti-aliased drawing, and sophisticated transforms upon text, lines and
+images such as shears and rotations.</p>
+
+
+<p>The GraphicsContext instance is the object that carries out the drawing
+upon a Window or other graphics surface, such as a Bitmap or Printer. In
+wxRuby, one is created by calling
+<a href="#GraphicsContext_create">GraphicsContext.create</a> and passing either an
+ordinary <a href="dc.html">DeviceContext</a> instance, or a <a href="window.html">Window</a>
+that should be drawn upon.</p>
+
+
+<h2>Derived from</h2>
+
+
+<p><a href="graphicsobject.html">GraphicsObject</a></p>
+
+
+<div id="methods">
+
+<h2>Methods</h2>
+
+
+<ul>
+<li><a href="#GraphicsContext_create">GraphicsContext#create</a></li>
+<li><a href="#GraphicsContext_createpen">GraphicsContext#create_pen</a></li>
+<li><a href="#GraphicsContext_createbrush">GraphicsContext#create_brush</a></li>
+
+<li><a href="#GraphicsContext_createradialgradientbrush">GraphicsContext#create_radial_gradient_brush</a></li>
+<li><a href="#GraphicsContext_createlineargradientbrush">GraphicsContext#create_linear_gradient_brush</a></li>
+<li><a href="#GraphicsContext_createfont">GraphicsContext#create_font</a></li>
+<li><a href="#GraphicsContext_creatematrix">GraphicsContext#create_matrix</a></li>
+<li><a href="#GraphicsContext_createpath">GraphicsContext#create_path</a></li>
+<li><a href="#GraphicsContext_clip">GraphicsContext#clip</a></li>
+<li><a href="#GraphicsContext_resetclip">GraphicsContext#reset_clip</a></li>
+<li><a href="#GraphicsContext_drawbitmap">GraphicsContext#draw_bitmap</a></li>
+<li><a href="#GraphicsContext_drawellipse">GraphicsContext#draw_ellipse</a></li>
+
+<li><a href="#GraphicsContext_drawicon">GraphicsContext#draw_icon</a></li>
+<li><a href="#GraphicsContext_drawlines">GraphicsContext#draw_lines</a></li>
+<li><a href="#GraphicsContext_drawpath">GraphicsContext#draw_path</a></li>
+<li><a href="#GraphicsContext_drawrectangle">GraphicsContext#draw_rectangle</a></li>
+<li><a href="#GraphicsContext_drawroundedrectangle">GraphicsContext#draw_rounded_rectangle</a></li>
+<li><a href="#GraphicsContext_drawtext">GraphicsContext#draw_text</a></li>
+<li><a href="#GraphicsContext_fillpath">GraphicsContext#fill_path</a></li>
+<li><a href="#GraphicsContext_strokepath">GraphicsContext#stroke_path</a></li>
+<li><a href="#GraphicsContext_getnativecontext">GraphicsContext#get_native_context</a></li>
+
+<li><a href="#GraphicsContext_getpartialtextextents">GraphicsContext#get_partial_text_extents</a></li>
+<li><a href="#GraphicsContext_gettextextent">GraphicsContext#get_text_extent</a></li>
+<li><a href="#GraphicsContext_rotate">GraphicsContext#rotate</a></li>
+<li><a href="#GraphicsContext_scale">GraphicsContext#scale</a></li>
+<li><a href="#GraphicsContext_translate">GraphicsContext#translate</a></li>
+<li><a href="#GraphicsContext_gettransform">GraphicsContext#get_transform</a></li>
+<li><a href="#GraphicsContext_settransform">GraphicsContext#set_transform</a></li>
+<li><a href="#GraphicsContext_concattransform">GraphicsContext#concat_transform</a></li>
+<li><a href="#GraphicsContext_setbrush">GraphicsContext#set_brush</a></li>
+
+<li><a href="#GraphicsContext_setfont">GraphicsContext#set_font</a></li>
+<li><a href="#GraphicsContext_setpen">GraphicsContext#set_pen</a></li>
+<li><a href="#GraphicsContext_strokeline">GraphicsContext#stroke_line</a></li>
+<li><a href="#GraphicsContext_strokelines">GraphicsContext#stroke_lines</a></li>
+</ul>
+
+
+</div>
+
+<h3 id="GraphicsContext_create">GraphicsContext#create</h3>
+
+
+<pre><code><a href="graphicscontext.html">GraphicsContext</a> <strong>create</strong>(<span class="arg-type"><a href="windowdc.html">WindowDC</a></span> dc)</code></pre>
+
+
+<p>Creates a GraphicsContext from a WindowDC (eg a PaintDC).</p>
+
+
+<pre><code><a href="graphicscontext.html">GraphicsContext</a> <strong>create</strong>(<span class="arg-type"><a href="window.html">Window</a></span> window)</code></pre>
+
+
+<p>Creates a GraphicsContext from a Window.</p>
+
+
+<h3 id="GraphicsContext_createpen">GraphicsContext#create_pen</h3>
+
+
+<pre><code><a href="graphicspen.html">GraphicsPen</a> <strong>create_pen</strong>(<span class="arg-type"><a href="pen.html">Pen</a></span> pen)</code></pre>
+
+
+<p>Creates a native pen from a Pen.</p>
+
+
+<h3 id="GraphicsContext_createbrush">GraphicsContext#create_brush</h3>
+
+
+<pre><code><a href="graphicsbrush.html">GraphicsBrush</a> <strong>create_brush</strong>(<span class="arg-type"><a href="brush.html">Brush</a></span> brush)</code></pre>
+
+
+<p>Creates a native brush from a Brush.</p>
+
+
+<h3 id="GraphicsContext_createradialgradientbrush">GraphicsContext#create_radial_gradient_brush</h3>
+
+
+<pre><code><a href="graphicsbrush.html">GraphicsBrush</a> <strong>create_radial_gradient_brush</strong>(<span class="arg-type"><a href="double.html">Double</a></span> xo, 
+                                             <span class="arg-type"><a href="double.html">Double</a></span> yo, 
+                                             <span class="arg-type"><a href="double.html">Double</a></span> xc, 
+                                             <span class="arg-type"><a href="double.html">Double</a></span> yc, 
+                                             <span class="arg-type"><a href="double.html">Double</a></span> radius, 
+                                             <span class="arg-type"><a href="colour.html">Colour</a></span> oColor, 
+                                             <span class="arg-type"><a href="colour.html">Colour</a></span> cColor)</code></pre>
+
+
+<p>Creates a native brush, having a radial gradient originating at (xo,yc) with color oColour and ends on a circle around (xc,yc) with radius r and color cColour</p>
+
+
+<h3 id="GraphicsContext_createlineargradientbrush">GraphicsContext#create_linear_gradient_brush</h3>
+
+
+<pre><code><a href="graphicsbrush.html">GraphicsBrush</a> <strong>create_linear_gradient_brush</strong>(<span class="arg-type"><a href="double.html">Double</a></span> x1, 
+                                             <span class="arg-type"><a href="double.html">Double</a></span> y1, 
+                                             <span class="arg-type"><a href="double.html">Double</a></span> x2, 
+                                             <span class="arg-type"><a href="double.html">Double</a></span> y2, 
+                                             <span>(arg-type)</span> Colour&#38;c1, 
+                                             <span>(arg-type)</span> Colour&#38;c2)</code></pre>
+
+
+<p>Creates a native brush, having a linear gradient, starting at (x1,y1) with color c1 to (x2,y2) with color c2</p>
+
+
+<h3 id="GraphicsContext_createfont">GraphicsContext#create_font</h3>
+
+
+<pre><code><a href="graphicsfont.html">GraphicsFont</a> <strong>create_font</strong>(<span class="arg-type"><a href="font.html">Font</a></span> font, 
+                           <span class="arg-type"><a href="colour.html">Colour</a></span> col = BLACK)</code></pre>
+
+
+<p>Creates a native graphics font from a Font and a text colour.</p>
+
+
+<h3 id="GraphicsContext_creatematrix">GraphicsContext#create_matrix</h3>
+
+
+<pre><code><a href="graphicsmatrix.html">GraphicsMatrix</a> <strong>create_matrix</strong>(<span class="arg-type"><a href="double.html">Double</a></span> a = 1.0, 
+                               <span class="arg-type"><a href="double.html">Double</a></span> b = 0.0, 
+                               <span class="arg-type"><a href="double.html">Double</a></span> c = 0.0, 
+                               <span class="arg-type"><a href="double.html">Double</a></span> d = 1.0, 
+                               <span class="arg-type"><a href="double.html">Double</a></span> tx = 0.0, 
+                               <span class="arg-type"><a href="double.html">Double</a></span> ty = 0.0)</code></pre>
+
+
+<p>Creates a native affine transformation matrix from the passed in values. The defaults result in an identity matrix.</p>
+
+
+<h3 id="GraphicsContext_createpath">GraphicsContext#create_path</h3>
+
+
+<pre><code><a href="graphicspath.html">GraphicsPath</a> <strong>create_path</strong>()</code></pre>
+
+
+<p>Creates a native graphics path which is initially empty.</p>
+
+
+<h3 id="GraphicsContext_clip">GraphicsContext#clip</h3>
+
+
+<pre><code><strong>clip</strong>(<span class="arg-type"><a href="region.html">Region</a></span> region)</code></pre>
+
+
+<p>Clips drawings to the region, combined to current clipping region</p>
+
+
+<pre><code><strong>clip</strong>(<span class="arg-type"><a href="double.html">Double</a></span> x,  <span class="arg-type"><a href="double.html">Double</a></span> y,  <span class="arg-type"><a href="double.html">Double</a></span> w,  <span class="arg-type"><a href="double.html">Double</a></span> h)</code></pre>
+
+
+<p>Clips drawings to the rectangle.</p>
+
+
+<h3 id="GraphicsContext_resetclip">GraphicsContext#reset_clip</h3>
+
+
+<pre><code><strong>reset_clip</strong>()</code></pre>
+
+
+<p>Resets the clipping to original shape.</p>
+
+
+<h3 id="GraphicsContext_drawbitmap">GraphicsContext#draw_bitmap</h3>
+
+
+<pre><code><strong>draw_bitmap</strong>(<span class="arg-type"><a href="bitmap.html">Bitmap</a></span> bmp,  <span class="arg-type"><a href="double.html">Double</a></span> x,  <span class="arg-type"><a href="double.html">Double</a></span> y, 
+            <span class="arg-type"><a href="double.html">Double</a></span> w, 
+            <span class="arg-type"><a href="double.html">Double</a></span> h)</code></pre>
+
+
+<p>Draws the bitmap. In case of a mono bitmap, this is treated as a mask and the current brushed is used for filling.</p>
+
+
+<h3 id="GraphicsContext_drawellipse">GraphicsContext#draw_ellipse</h3>
+
+
+<pre><code><strong>draw_ellipse</strong>(<span class="arg-type"><a href="double.html">Double</a></span> x,  <span class="arg-type"><a href="double.html">Double</a></span> y,  <span class="arg-type"><a href="double.html">Double</a></span> w, 
+             <span class="arg-type"><a href="double.html">Double</a></span> h)</code></pre>
+
+
+<p>Draws an ellipse.</p>
+
+
+<h3 id="GraphicsContext_drawicon">GraphicsContext#draw_icon</h3>
+
+
+<pre><code><strong>draw_icon</strong>(<span class="arg-type"><a href="icon.html">Icon</a></span> icon,  <span class="arg-type"><a href="double.html">Double</a></span> x,  <span class="arg-type"><a href="double.html">Double</a></span> y, 
+          <span class="arg-type"><a href="double.html">Double</a></span> w, 
+          <span class="arg-type"><a href="double.html">Double</a></span> h)</code></pre>
+
+
+<p>Draws the icon.</p>
+
+
+<h3 id="GraphicsContext_drawlines">GraphicsContext#draw_lines</h3>
+
+
+<pre><code><strong>draw_lines</strong>(<span class="arg-type">Integer</span> n,  <span class="arg-type"><a href="point2ddouble.html">Point2DDouble</a></span> points, 
+           <span class="arg-type">Integer</span> fillStyle = ODDEVEN_RULE)</code></pre>
+
+
+<p>Draws a polygon.</p>
+
+
+<h3 id="GraphicsContext_drawpath">GraphicsContext#draw_path</h3>
+
+
+<pre><code><strong>draw_path</strong>(<span class="arg-type"><a href="graphicspath.html">GraphicsPath</a></span> path,  <span class="arg-type">Integer</span> fillStyle = ODDEVEN_RULE)</code></pre>
+
+
+<p>Draws the path by first filling and then stroking.</p>
+
+
+<h3 id="GraphicsContext_drawrectangle">GraphicsContext#draw_rectangle</h3>
+
+
+<pre><code><strong>draw_rectangle</strong>(<span class="arg-type"><a href="double.html">Double</a></span> x,  <span class="arg-type"><a href="double.html">Double</a></span> y,  <span class="arg-type"><a href="double.html">Double</a></span> w, 
+               <span class="arg-type"><a href="double.html">Double</a></span> h)</code></pre>
+
+
+<p>Draws a rectangle.</p>
+
+
+<h3 id="GraphicsContext_drawroundedrectangle">GraphicsContext#draw_rounded_rectangle</h3>
+
+
+<pre><code><strong>draw_rounded_rectangle</strong>(<span class="arg-type"><a href="double.html">Double</a></span> x,  <span class="arg-type"><a href="double.html">Double</a></span> y,  <span class="arg-type"><a href="double.html">Double</a></span> w, 
+                       <span class="arg-type"><a href="double.html">Double</a></span> h, 
+                       <span class="arg-type"><a href="double.html">Double</a></span> radius)</code></pre>
+
+
+<p>Draws a rounded rectangle.</p>
+
+
+<h3 id="GraphicsContext_drawtext">GraphicsContext#draw_text</h3>
+
+
+<pre><code><strong>draw_text</strong>(<span class="arg-type">String</span> str,  <span class="arg-type"><a href="double.html">Double</a></span> x,  <span class="arg-type"><a href="double.html">Double</a></span> y, 
+          <span class="arg-type"><a href="double.html">Double</a></span> angle)</code></pre>
+
+
+<pre><code><strong>draw_text</strong>(<span class="arg-type">String</span> str,  <span class="arg-type"><a href="double.html">Double</a></span> x,  <span class="arg-type"><a href="double.html">Double</a></span> y)</code></pre>
+
+
+<p>Draws a text at the defined position, at the given angle.</p>
+
+
+<h3 id="GraphicsContext_fillpath">GraphicsContext#fill_path</h3>
+
+
+<pre><code><strong>fill_path</strong>(<span class="arg-type"><a href="graphicspath.html">GraphicsPath</a></span> path,  <span class="arg-type">Integer</span> fillStyle = ODDEVEN_RULE)</code></pre>
+
+
+<p>Fills the path with the current brush.</p>
+
+
+<h3 id="GraphicsContext_strokepath">GraphicsContext#stroke_path</h3>
+
+
+<pre><code><strong>stroke_path</strong>(<span class="arg-type"><a href="graphicspath.html">GraphicsPath</a></span> path)</code></pre>
+
+
+<p>Strokes along a path with the current pen.</p>
+
+
+<h3 id="GraphicsContext_getnativecontext">GraphicsContext#get_native_context</h3>
+
+
+<pre><code><strong>get_native_context</strong>()</code></pre>
+
+
+<p>Returns the native context (CGContextRef for Core Graphics, Graphics pointer for GDIPlus and cairo_t pointer for cairo).</p>
+
+
+<h3 id="GraphicsContext_getpartialtextextents">GraphicsContext#get_partial_text_extents</h3>
+
+
+<pre><code><strong>get_partial_text_extents</strong>(<span class="arg-type">String</span> text,  <span class="arg-type"><a href="arraydouble.html">ArrayDouble</a></span> widths)</code></pre>
+
+
+<p>Fills the <em>widths</em> array with the widths from the beginning of 
+
+<em>text</em> to the corresponding character of <em>text</em>.</p>
+
+
+<h3 id="GraphicsContext_gettextextent">GraphicsContext#get_text_extent</h3>
+
+
+<pre><code><strong>get_text_extent</strong>(<span class="arg-type">String</span> text,  <span class="arg-type"><a href="double.html">Double</a></span> width,  <span class="arg-type"><a href="double.html">Double</a></span> height, 
+                <span class="arg-type"><a href="double.html">Double</a></span> descent, 
+                <span class="arg-type"><a href="double.html">Double</a></span> externalLeading)</code></pre>
+
+
+<p>Gets the dimensions of the string using the currently selected font.</p>
+
+
+<h3 id="GraphicsContext_rotate">GraphicsContext#rotate</h3>
+
+
+<pre><code><strong>rotate</strong>(<span class="arg-type">Double</span> angle)</code></pre>
+
+<p>Rotates the current transformation matrix (radians)</p>
+
+
+<h3 id="GraphicsContext_scale">GraphicsContext#scale</h3>
+
+
+<pre><code><strong>scale</strong>(<span class="arg-type">Double</span> x_scale, <span class="arg-type">Double</span> y_scale)</code></pre>
+
+
+<p>Scales the current transformation matrix.</p>
+
+
+<h3 id="GraphicsContext_translate">GraphicsContext#translate</h3>
+
+
+<pre><code><strong>translate</strong>(<span class="arg-type">Double</span> dx, <span class="arg-type">Double</span> dy)</code></pre>
+
+
+<p>Translates the current transformation matrix.</p>
+
+
+<h3 id="GraphicsContext_gettransform">GraphicsContext#get_transform</h3>
+
+
+<pre><code><a href="graphicsmatrix.html">GraphicsMatrix</a> <strong>get_transform</strong>()</code></pre>
+
+
+<p>Gets the current transformation matrix of this context.</p>
+
+
+<h3 id="GraphicsContext_settransform">GraphicsContext#set_transform</h3>
+
+
+<pre><code><strong>set_transform</strong>(<span class="arg-type"><a href="graphicsmatrix.html">GraphicsMatrix</a></span> matrix)</code></pre>
+
+
+<p>Sets the current transformation matrix of this context.</p>
+
+
+<h3 id="GraphicsContext_concattransform">GraphicsContext#concat_transform</h3>
+
+
+<pre><code><strong>concat_transform</strong>(<span class="arg-type"><a href="graphicsmatrix.html">GraphicsMatrix</a></span> matrix)</code></pre>
+
+
+<p>Concatenates the passed in transform with the current transform of this context.</p>
+
+<h3 id="GraphicsContext_setbrush">GraphicsContext#set_brush</h3>
+
+
+<pre><code><strong>set_brush</strong>(<span class="arg-type"><a href="brush.html">Brush</a></span> brush)
+<strong>set_brush</strong>(<span class="arg-type"><a href="graphicsbrush.html">GraphicsBrush</a></span> brush)</code></pre>
+
+<p>Sets the brush for filling paths.</p>
+
+
+<h3 id="GraphicsContext_setfont">GraphicsContext#set_font</h3>
+
+
+<pre><code><strong>set_font</strong>(<span class="arg-type"><a href="font.html">Font</a></span> font, <span class="arg-type"><a href="colour.html">Colour</a></span> colour)
+
+<strong>set_font</strong>(<span class="arg-type"><a href="graphicsfont.html">GraphicsFont</a></span> font)</code></pre>
+
+
+<p>Sets the font for drawing text.</p>
+
+
+<h3 id="GraphicsContext_setpen">GraphicsContext#set_pen</h3>
+
+
+<pre><code><strong>set_pen</strong>(<span class="arg-type"><a href="pen.html">Pen</a></span> pen)
+
+<strong>set_pen</strong>(<span class="arg-type"><a href="graphicspen.html">GraphicsPen</a></span> pen)</code></pre>
+
+
+<p>Sets the pen used for stroking.</p>
+
+
+<h3 id="GraphicsContext_strokeline">GraphicsContext#strokeline</h3>
+
+
+<pre><code><strong>strokeline</strong>(<span class="arg-type">Double</span> x1,<span class="arg-type">Double</span> y1,<span class="arg-type">Double</span> x2,<span class="arg-type">Double</span> y2)</code></pre>
+
+
+<p>Strokes a single line.</p>
+
+
+<h3 id="GraphicsContext_strokelines">GraphicsContext#strokelines</h3>
+
+
+<pre><code><strong>strokelines</strong>(<span class="arg-type">Integer</span> n,<span class="arg-type"><a href="point2ddouble.html">Point2DDouble</a></span> begin_points,<span class="arg-type"><a href="point2ddouble.html">Point2DDouble</a></span> end_points)
+
+<strong>strokelines</strong>(<span class="arg-type">Integer</span> n,<span class="arg-type"><a href="point2ddouble.html">Point2DDouble</a></span> points)</code></pre>
+
+
+<p>Stroke disconnected lines from begin to end points, fastest method available for this purpose.</p>
+<p id="datestamp">[This page automatically generated from <a
+href="graphicscontext.txtl">the Textile source</a> at Fri Oct 31 16:06:42 +0000 2008]</p>
+
+</body>
+</html>

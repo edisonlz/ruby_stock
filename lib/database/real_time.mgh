@@ -1,0 +1,36 @@
+--- 
+:table_name: :real_time
+:last_id_used: 0
+:deleted_recs_counter: 0
+:class_name: RealTime
+:columns: 
+- :class: Mongoose::IDColumn
+  :name: :id
+  :data_type: :integer
+- :class: Mongoose::SkipListIndexColumn
+  :name: :symbol
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :name
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :ask
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :bid
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :change
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :lastTradeWithTime
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :changePoints
+  :data_type: :float
+- :class: Mongoose::Column
+  :name: :dayRange
+  :data_type: :string
+- :class: Mongoose::Column
+  :name: :marketCap
+  :data_type: :string
